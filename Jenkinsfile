@@ -37,19 +37,19 @@ pipeline{
           dir('source_code'){
             sh '''
                 mvn --version
-                mvn install -DskipTests
+                mvn clean install -DskipTests
             '''
           }
         }
       }
       
-      stage ('Store the Artifact'){
+      /*stage ('Store the Artifact'){
         steps{
           dir('source_code/pet-rest-api-web/target'){
             sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
           }
         }
-      }
+      }*/
       
     }
   
