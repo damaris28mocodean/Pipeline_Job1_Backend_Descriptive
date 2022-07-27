@@ -24,15 +24,15 @@ pipeline{
       
         stage ('Initialize') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "MAVEN_HOME = ${MAVEN_HOME}"
-                    mvn --version
-                '''
+                dir('source_code'){
+                            git url: 'https://github.com/aditya-sridhar/simple-reactjs-app.git', branch: 'master'
+
+                            sh 'rm -r .git'
+                        }
             }
         }
       
-      stage ('Build with maven'){
+      /*stage ('Build with maven'){
         steps{
           dir('source_code'){
             sh '''
@@ -43,7 +43,7 @@ pipeline{
         }
       }
       
-      /*stage ('Store the Artifact'){
+      stage ('Store the Artifact'){
         steps{
           dir('source_code/pet-rest-api-web/target'){
             sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
