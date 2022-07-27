@@ -37,7 +37,7 @@ pipeline{
           dir('source_code'){
             sh '''
                 mvn --version
-                mvn clean install -DskipTests
+                mvn install -DskipTests
             '''
           }
         }
