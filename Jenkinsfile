@@ -33,11 +33,15 @@ pipeline{
         }
       
       stage ('Build with maven'){
-        sh "mvn --version"
+        steps{
+            sh "mvn --version"
+        }
       }
       
       stage ('Store the Artifact'){
-        sh "echo aici o sa fie ceva!!!"
+        steps{
+          sh "echo aici o sa fie ceva!!!"
+        }
       }
       
     }
