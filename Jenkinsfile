@@ -14,7 +14,7 @@ pipeline{
               properties([
                         parameters([
                             string(defaultValue: 'pet-rest-api-web-0.0.1-SNAPSHOT', name: 'JAR_FILE_NAME', description: ''),
-                            string(defaultValue: '/var/lib/jenkins/workspace/Pipeline_Job2_Backend_Descriptive/Artifacts', name: 'PATH_TO_ARTIFACTS', description: '')
+                            string(defaultValue: '/var/lib/jenkins/workspace/Pipeline_Job2_Backend_Declarative/Artifacts', name: 'PATH_TO_ARTIFACTS', description: '')
                         ])
                     ])
               
