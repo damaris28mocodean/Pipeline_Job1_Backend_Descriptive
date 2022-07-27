@@ -22,7 +22,7 @@ pipeline{
           }
         }
       
-        stage ('Initialize') {
+       /*stage ('Initialize') {
             steps {
                 dir('source_code'){
                             git url: 'https://github.com/perscrew/pet-rest-api.git', branch: 'master'
@@ -30,9 +30,9 @@ pipeline{
                             sh 'rm -r .git'
                         }
             }
-        }
+        }*/
       
-      /*stage ('Build with maven'){
+      stage ('Build with maven'){
         steps{
           dir('source_code'){
             sh '''
@@ -49,7 +49,7 @@ pipeline{
             sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
           }
         }
-      }*/
+      }
       
     }
   
