@@ -25,7 +25,7 @@ pipeline{
         stage ('Initialize') {
             steps {
                 dir('source_code'){
-                            git url: 'https://github.com/aditya-sridhar/simple-reactjs-app.git', branch: 'master'
+                            git url: 'https://github.com/perscrew/pet-rest-api.git', branch: 'master'
 
                             sh 'rm -r .git'
                         }
