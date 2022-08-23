@@ -1,7 +1,7 @@
 pipeline{
   
  agent {
-  label 'builtin'
+  label 'master'
   }
   
     tools {
