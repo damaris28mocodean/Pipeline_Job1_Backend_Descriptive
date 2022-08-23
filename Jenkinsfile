@@ -1,7 +1,7 @@
 pipeline{
   
  agent {
-  label 'Built-In Node'
+  label 'Jenkins'
   }
   
     tools {
