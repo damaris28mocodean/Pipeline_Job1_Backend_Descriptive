@@ -40,8 +40,8 @@ pipeline{
         stage ('Store the Artifact'){
           steps{
             dir('source_code/pet-rest-api-web/target'){
-              sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
-              sh "jfrog rt upload --url http://192.168.152.129:8082/ui --access-token ${ARTIFACTORY_ACCESS_TOKEN} ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar Artifactory/"
+              //sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
+              sh "jfrog rt upload --url http://192.168.152.129:8082/ui --access-token ${ARTIFACTORY_ACCESS_TOKEN} ${JAR_FILE_NAME}.jar Artifactory/"
             }
           }
         }
