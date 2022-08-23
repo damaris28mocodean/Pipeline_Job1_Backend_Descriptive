@@ -7,6 +7,11 @@ pipeline{
     tools {
         maven 'maven3.8.6'
     }
+
+    environment{
+      CI = true
+      ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-acces-token')
+    }
   
     stages {
       
@@ -36,6 +41,7 @@ pipeline{
           steps{
             dir('source_code/pet-rest-api-web/target'){
               sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
+              sh "jfrog rt upload --url http://192.168.152.129:8082/ui --access-token ${ARTIFACTORY_ACCESS_TOKEN} ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar Artifactory/"
             }
           }
         }
