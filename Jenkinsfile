@@ -29,13 +29,13 @@ pipeline{
           }
         }
 
-        /*stage ('Build with maven'){
+        stage ('Build with maven'){
           steps{
             dir('source_code'){
               sh "mvn clean install -DskipTests"
             }
           }
-        }*/
+        }
 
         stage ('Store the Artifact'){
           steps{
