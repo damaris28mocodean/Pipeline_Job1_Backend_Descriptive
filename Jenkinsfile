@@ -1,6 +1,6 @@
 pipeline{
   
- agent Built-In Node
+ agent master
   
     tools {
         maven 'maven3.8.6'
