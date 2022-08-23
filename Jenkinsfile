@@ -1,6 +1,8 @@
 pipeline{
   
- agent {"Built-In Node"}
+ agent {
+  label 'Built-In Node'
+  }
   
     tools {
         maven 'maven3.8.6'
