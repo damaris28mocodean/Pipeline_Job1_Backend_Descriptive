@@ -1,7 +1,7 @@
 pipeline{
   
  agent {
-  label 'slaveJenkins'
+  label 'slaveNode'
   }
   
     tools {
