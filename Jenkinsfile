@@ -1,7 +1,7 @@
 pipeline{
   
  agent {
-  label 'Jenkins'
+  label 'builtin'
   }
   
     tools {
