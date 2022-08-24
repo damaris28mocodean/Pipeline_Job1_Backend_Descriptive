@@ -41,7 +41,7 @@ pipeline{
           steps{
             dir('source_code/pet-rest-api-web/target'){
               //sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
-              sh "jf rt upload --url http://192.168.152.129:8082/ui/admin/repositories/local --access-token ${ARTIFACTORY_ACCESS_TOKEN} ${JAR_FILE_NAME}.jar Artifactory/"
+              sh "jf rt u ${JAR_FILE_NAME}.jar Artifactory"
             }
           }
         }
