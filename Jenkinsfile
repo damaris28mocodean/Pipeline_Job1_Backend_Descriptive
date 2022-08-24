@@ -7,6 +7,11 @@ pipeline{
     tools {
         maven 'maven3.8.6'
     }
+    
+    environment{
+
+      CI = true
+    }
   
     stages {
       
@@ -35,8 +40,8 @@ pipeline{
         stage ('Store the Artifact'){
           steps{
             dir('source_code/pet-rest-api-web/target'){
-              //sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
-              sh "jf rt u ${JAR_FILE_NAME}.jar  --url http://192.168.152.129:8082/artifactory/Artifactory --user admin --password jfrogDamy28&"
+              sh "mv ${JAR_FILE_NAME}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
+              sh "jf rt u ${JAR_FILE_NAME}.jar  Artifactory --url http://192.168.152.129:8082/artifactory/Artifactory --user admin --password jfrogDamy28&"
             }
           }
         }
