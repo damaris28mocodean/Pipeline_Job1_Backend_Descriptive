@@ -7,11 +7,6 @@ pipeline{
     tools {
         maven 'maven3.8.6'
     }
-
-    environment{
-      CI = true
-      ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-acces-token')
-    }
   
     stages {
       
