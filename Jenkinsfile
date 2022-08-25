@@ -46,6 +46,22 @@ pipeline{
             }
           }
         }
+
+      stage('Download the Artifacts'){
+      
+        steps{
+          
+          sh "cd ${PATH_TO_ARTIFACTS}"
+          
+          dir('Artifacts'){
+              
+              sh "jf rt dl Artifactory/*.jar"
+            
+          }
+          
+        }
+        
+      }
       
     }
   
