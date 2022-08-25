@@ -37,12 +37,12 @@ pipeline{
           }
         }
 
-        stage ('Store the Artifact'){
+        stage ('Upload the Artifact'){
           steps{
             dir('source_code/pet-rest-api-web/target'){
               sh "mv ${JAR_FILE_NAME}.jar ${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
               sh "jf rt u ${JAR_FILE_NAME}-${BUILD_NUMBER}.jar  Artifactory/"
-              sh "mv ${JAR_FILE_NAME}-${BUILD_NUMBER}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
+              //sh "mv ${JAR_FILE_NAME}-${BUILD_NUMBER}.jar ${PATH_TO_ARTIFACTS}/${JAR_FILE_NAME}-${BUILD_NUMBER}.jar"
             }
           }
         }
